@@ -86,7 +86,7 @@
 	</div><!-- #body -->
 	<div id="foot" class="clearfix2">
 		<div class="wrap">
-			<p id="credit"><a href="http://outstando.com/thoughtplifier">Thoughtplifier Theme</a><br /> Designed &amp; developed by <br /> <a href="http://outstando.com">Fikri Rasyid</a></p>
+			<p id="credit"><a href="http://outstando.com/focustheme">Thoughtplifier Theme</a><br /> Designed &amp; developed by <br /> <a href="http://outstando.com">Fikri Rasyid</a></p>
 			<ul id="bar-root"><?php dynamic_sidebar('Footer Bar'); ?></ul>
 		</div><!-- .wrap -->
 	</div><!-- #foot -->

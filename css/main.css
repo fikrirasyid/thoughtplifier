@@ -99,9 +99,8 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 #nav-bar .widget_tag_cloud        {text-align:justify;}
 #nav-bar .widget_recent_comments a {font-weight:bold;}
 
-/* Calendar Widget */
-#wp-calendar    {width:100%;}
-#wp-calendar caption {margin:0 0 10px;}
+
+
 
 /* BODY
 --------------------------------------------------------------
