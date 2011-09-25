@@ -486,7 +486,7 @@ function pagenavi($before = '', $after = '') {
                 //esc_url(): Encodes < > & " ' (less than, greater than, ampersand, double quote, single quote).
                 /*http://codex.wordpress.org/Data_Validation*/
                 //get_pagenum_link():(wp-includes/link-template.php)-Retrieve get links for page numbers.
-                echo '<a href="'.esc_url(get_pagenum_link()).'" class="first" title="'.$first_page_text.'">&raquo First</a>';
+                echo '<a href="'.esc_url(get_pagenum_link()).'" class="first" title="'.$first_page_text.'">&laquo First</a>';
             }
 
             previous_posts_link($pagenavi_options['prev_text']);
@@ -513,7 +513,7 @@ function pagenavi($before = '', $after = '') {
  
             if ($end_page < $max_page) {
                 $last_page_text = str_replace("%TOTAL_PAGES%", number_format_i18n($max_page), $pagenavi_options['last_text']);
-                echo '<a href="'.esc_url(get_pagenum_link($max_page)).'" class="last" title="'.$last_page_text.'">Last &laquo;</a>';
+                echo '<a href="'.esc_url(get_pagenum_link($max_page)).'" class="last" title="'.$last_page_text.'">Last &raquo;</a>';
             }
  
             if($larger_page_to_show > 0 && $larger_end_page_start < $max_page) {

@@ -214,9 +214,9 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 /* Pagenavi */
 #pagenavi               {float:left; width:500px; margin:0 10px 30px 10px;}
 #pagenavi span,
-#pagenavi a             {float:left; background:#dfdfdf; border:1px solid #afafaf; margin:0 5px 0 0; padding:5px 10px;}
+#pagenavi a             {float:left; background:#dfdfdf; border:1px solid #afafaf; margin:0 5px 0 0; padding:5px 8px;}
 #pagenavi a:hover       {background:#cfcfcf; color:#000;}
-#pagenavi .pages        {margin-left:90px;}
+#pagenavi .pages        {margin-left:0;}
 #pagenavi span.current     {font-style:italic; background:none; border:1px solid #efefef;}
 
 
