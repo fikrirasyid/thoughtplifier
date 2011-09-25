@@ -59,8 +59,8 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 /* HEAD
 --------------------------------------------------------------
 -------------------------------------------------------------- */
-#head .wrap             {padding:70px 0; height:60px; text-align:center; box-shadow:0 0 5px #333;}
-#sitename               {font:italic bold 35px Georgia; margin:0 0 2px 0;}
+#head .wrap             {padding:60px 0 90px; height:60px; text-align:center; box-shadow:0 0 5px #333;}
+#sitename               {font:italic bold 40px Georgia; margin:0 0 5px 0;}
 #tagline                {font:italic 16px Georgia;}
 
 

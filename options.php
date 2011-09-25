@@ -62,7 +62,7 @@ function optionsframework_options() {
 		
 	$options = array();
 
-	$options[] = array( "name" => "Custom Color Scheme",
+	$options[] = array( "name" => "Color Scheme",
 						"type" => "heading");
 							
 	$options[] = array( "name" => "Main Background",
@@ -94,6 +94,18 @@ function optionsframework_options() {
 						"id" => "ess_header_hover",
 						"std" => "#AFAFAF",
 						"type" => "color");
+	
+	$options[] = array( "name" => "Typography",
+						"type" => "heading");
+
+	$ess_heading_typography = array("Georgia" => "Georgia","Copse" => "Copse", "Pacifico" => "Pacifico", "Lobster" => "Lobster", "Bangers" => "Bangers", "Kreon" => "Kreon", "Leckerli+One" => "Leckerli One", "Carter+One" => "Carter One");
+	$options[] = array( "name" => "Heading Typography",
+						"desc" => "Select font that will be used for your headings (site name, content title and content headings).",
+						"id" => "ess_heading_typography",
+						"std" => "Georgia",
+						"type" => "select",
+						"options" => $ess_heading_typography);	
+	
 		
 	return $options;
 }

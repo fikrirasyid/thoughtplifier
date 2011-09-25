@@ -117,6 +117,46 @@ a:hover                 {color:<?php echo of_get_option('ess_link_hover', '#9600
 
 
 
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
+ * Custom Typography
+ * 
+ */
+add_action('wp_head', 'ess_typography', 5); 
+function ess_typography(){
+    if (of_get_option('ess_heading_typography', 'Georgia') != 'Georgia'){
+	$printed_typography = str_replace("+", " ", of_get_option('ess_heading_typography', 'Georgia'));
+	?>
+<link href='http://fonts.googleapis.com/css?family=<?php echo of_get_option('ess_heading_typography', 'Georgia')?>' rel='stylesheet' type='text/css'>
+<style type="text/css">
+body #sitename,
+body #sitename a,
+body .title,
+body .title a,
+body .content h1,
+body .content h2,
+body .content h3,
+body .content h4,
+body .content h5,
+body .content h6,
+body .section-title,
+body .widget-title,
+body .comment-title,
+body #reply-title,
+body #credit {font-family:'<?php echo $printed_typography; ?>'; font-style:normal; font-weight:normal; text-transform:none !important;}
+body #sitename,
+body #sitename a {font-size:45px;}
+body .section-title,
+body .widget-title {font-size:18px !important;}
+
+</style>	
+	<?php
+    }
+}
+
+
+
 /*
  * ------------------------------------------------------------------------------------------------------------------------
  * Formatting site's heading for the sake of SEO - only one h1 per page
