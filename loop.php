@@ -30,7 +30,7 @@ while ( have_posts() ) : the_post(); ?>
                 <?php the_content(); ?>
             </div><!-- .content -->
             
-            <div id="author-box">
+            <div id="author-box" class="clearfix">
                 <?php ess_author_box(); ?>
             </div><!-- .author-box -->
             
