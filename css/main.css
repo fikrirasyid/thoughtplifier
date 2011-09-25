@@ -141,7 +141,7 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 
 .attachment-main-image,
 .content img            {padding:4px; border:1px solid #cfcfcf; margin:0 0 10px; background:#fff;}
-.content img.wp-smiley  {background:none; border:none; padding:0;}
+.content img.wp-smiley  {background:none; border:none; padding:0; margin:0; line-height:0;}
 .content .alignleft	{margin:0 20px 10px 0;}
 .content .alignright    {margin:0 0 10px 20px;}
 .content .aligncenter   {margin:0 auto 10px;}
