@@ -21,6 +21,7 @@ ol, ul 			{list-style: none;}
 blockquote 		{quotes: none;}
 blockquote:before, blockquote:after {content: ''; content: none;}
 del 			{text-decoration: line-through;}
+:focus                  {outline: 0;}
 
 /* tables still need 'cellspacing="0"' in the markup */
 table 			{border-collapse: collapse; border-spacing: 0;}
