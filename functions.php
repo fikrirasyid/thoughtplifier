@@ -35,8 +35,6 @@ function ess_stylesheets_scripts(){
     wp_enqueue_style('ess-main');
 		
     // Adding scripts into wp_head()
-    wp_deregister_script('jquery');
-    wp_register_script( 'jquery', get_bloginfo('template_directory') . '/js/jquery-1.6.2.min.js', array(), false, false);
     wp_enqueue_script('jquery');
 }
 
@@ -53,7 +51,7 @@ add_action('wp_head', 'ess_javascripts', 10);
 function ess_javascripts(){
     ?>
     <script type="text/javascript"> 
-        jQuery(document).ready(function(){
+        jQuery(document).ready(function( $ ){
             jQuery("#nav li").hover(function(){jQuery(this).addClass("hover").children("ul").slideToggle();}, function(){jQuery(this).removeClass("hover").children("ul").slideToggle();});
 	    jQuery("#nav li li").has(".sub-menu").children("a").append(" &raquo;");
             
