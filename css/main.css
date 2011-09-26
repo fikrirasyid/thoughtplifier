@@ -168,6 +168,10 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 
 /* Comment */
 #comment-wrap           {border-top:1px dotted #afafaf;}
+.comment-nav            {float:left; width:480px; margin:0 0 50px;}
+.comment-nav.bottom     {margin:50px 0 0;}
+.comment-nav a          {float:left; padding:5px 10px; border-bottom:1px dotted #afafaf; font-weight:bold; font-style:italic;}
+.comment-next a         {float:right;}
 #comment-list           {background:#999;}
 #comment-list li        {margin:0 0 10px; float:left; width:480px;}
 #comment-list li:after  {content:".";display:block; height:0; clear:both; visibility:hidden;}

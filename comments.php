@@ -15,7 +15,7 @@
 		</h4>		
 		
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			<div class="comment-nav">
+			<div class="comment-nav clearfix">
 				<div class="comment-prev">
 					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'essential' ) ); ?>
 				</div>
@@ -30,7 +30,7 @@
 		</ol>	
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
-			<div class="comment-nav">
+			<div class="comment-nav clearfix bottom">
 				<div class="comment-prev">
 					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'essential' ) ); ?>
 				</div>
