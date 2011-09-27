@@ -62,6 +62,15 @@ function optionsframework_options() {
 		
 	$options = array();
 
+	$options[] = array( "name" => "General",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Custom Javascript",
+						"desc" => "Paste custom javascript code such as Google Analytics here.",
+						"id" => "tp_custom_js",
+						"std" => "",
+						"type" => "textarea"); 
+
 	$options[] = array( "name" => "Color Scheme",
 						"type" => "heading");
 							

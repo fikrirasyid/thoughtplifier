@@ -82,6 +82,7 @@ function tp_javascripts(){
 	//]]>
     </script>
     <?php
+    echo of_get_option('tp_custom_js', '');
 
 }
 
@@ -567,4 +568,29 @@ function pagenavi($before = '', $after = '') {
             echo '</div></div>'.$after."\n";
         }
     }
+}
+
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
+ * Allow <script> tag to be embedded in theme option's textarea
+ * 
+*/
+add_action('admin_init','optionscheck_change_santiziation', 100);
+
+function optionscheck_change_santiziation() {
+    remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+    add_filter( 'of_sanitize_textarea', 'tp_sanitize_textarea' );
+}
+ 
+function tp_sanitize_textarea($input) {
+    global $allowedposttags;
+      $custom_allowedtags["script"] = array();
+ 
+      $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+      $output = wp_kses( $input, $custom_allowedtags);
+    return $output;
 }
