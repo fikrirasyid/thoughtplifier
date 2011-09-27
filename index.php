@@ -7,11 +7,11 @@
 			if 	( is_home() )			{ bloginfo("name"); echo (' | '); bloginfo('description'); }
 			elseif	( is_single() )			{ wp_title(''); }
 			elseif	( is_page() || is_paged() ) 	{ bloginfo('name'); wp_title('|'); }
-			elseif	( is_archive() )		{ _e('Archive for ', 'essential'); wp_title(''); }			
-			elseif	( is_author() )			{ wp_title(__(' | Post written by ', 'essential'));	} 
-			elseif	( is_search() )			{ echo __('Search results for "', 'essential') . $s . '"'; }
-			elseif	( is_404() )			{ _e('Four-oh-Four', 'essential'); } 
-			else 					{ _e('Are You Lost?', 'essential'); }
+			elseif	( is_archive() )		{ _e('Archive for ', 'thoughtplifier'); wp_title(''); }			
+			elseif	( is_author() )			{ wp_title(__(' | Post written by ', 'thoughtplifier'));	} 
+			elseif	( is_search() )			{ echo __('Search results for "', 'thoughtplifier') . $s . '"'; }
+			elseif	( is_404() )			{ _e('Four-oh-Four', 'thoughtplifier'); } 
+			else 					{ _e('Are You Lost?', 'thoughtplifier'); }
 		?>
 	</title>
 	
@@ -39,7 +39,7 @@
 	<div id="head">
 		<div class="wrap">
 			<div id="identity">
-				<?php ess_sitename(); ?>
+				<?php tp_sitename(); ?>
 				<p id="tagline"><?php bloginfo('description'); ?></p>
 			</div>
 		</div><!-- .wrap -->
@@ -63,11 +63,11 @@
 			<?php if (is_home() || is_category() || is_tag() || is_search()) { ?>
 			<div class="content-title-wrap">
 				<?php if (is_category()) { ?>
-					<h1 id="content-title"><?php _e('Posts categorized into ', 'essential'); ?> <em><?php echo single_cat_title(); ?></em> :</h1>			
+					<h1 id="content-title"><?php _e('Posts categorized into ', 'thoughtplifier'); ?> <em><?php echo single_cat_title(); ?></em> :</h1>			
 				<?php } elseif (is_tag()) { ?>
-					<h1 id="content-title"><?php _e('Posts tagged with ', 'essential'); ?> <em><?php echo single_tag_title(); ?></em> :</h1>
+					<h1 id="content-title"><?php _e('Posts tagged with ', 'thoughtplifier'); ?> <em><?php echo single_tag_title(); ?></em> :</h1>
 				<?php } elseif (is_search()) { ?>
-					<h1 id="content-title"><?php _e('Search results for ', 'essential'); ?> <em><?php echo $s ?></em> :</h1>
+					<h1 id="content-title"><?php _e('Search results for ', 'thoughtplifier'); ?> <em><?php echo $s ?></em> :</h1>
 				<?php } ?>
 			</div>				
 			<?php } ?>

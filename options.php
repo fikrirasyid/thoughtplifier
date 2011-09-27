@@ -67,44 +67,44 @@ function optionsframework_options() {
 							
 	$options[] = array( "name" => "Main Background",
 						"desc" => "Main Background. Used on header.",
-						"id" => "ess_main_background",
+						"id" => "tp_main_background",
 						"std" => "#555555",
 						"type" => "color");
 
 	$options[] = array( "name" => "Link Color",
 						"desc" => "Main link color. Most of link presented will use this color.",
-						"id" => "ess_link_color",
+						"id" => "tp_link_color",
 						"std" => "#000000",
 						"type" => "color");
 
 	$options[] = array( "name" => "Link Hover",
 						"desc" => "Color of hovered link.",
-						"id" => "ess_link_hover",
+						"id" => "tp_link_hover",
 						"std" => "#960000",
 						"type" => "color");
 
 	$options[] = array( "name" => "Header Color",
 						"desc" => "Color of the text on header.",
-						"id" => "ess_header_color",
+						"id" => "tp_header_color",
 						"std" => "#FFFFFF",
 						"type" => "color");
 
 	$options[] = array( "name" => "Header Color Hover",
 						"desc" => "Color of the hovered link on header.",
-						"id" => "ess_header_hover",
+						"id" => "tp_header_hover",
 						"std" => "#AFAFAF",
 						"type" => "color");
 	
 	$options[] = array( "name" => "Typography",
 						"type" => "heading");
 
-	$ess_heading_typography = array("Georgia" => "Georgia","Copse" => "Copse", "Pacifico" => "Pacifico", "Lobster" => "Lobster", "Bangers" => "Bangers", "Kreon" => "Kreon", "Leckerli+One" => "Leckerli One", "Carter+One" => "Carter One");
+	$tp_heading_typography = array("Georgia" => "Georgia","Copse" => "Copse", "Pacifico" => "Pacifico", "Lobster" => "Lobster", "Bangers" => "Bangers", "Kreon" => "Kreon", "Leckerli+One" => "Leckerli One", "Carter+One" => "Carter One");
 	$options[] = array( "name" => "Heading Typography",
 						"desc" => "Select font that will be used for your headings (site name, content title and content headings).",
-						"id" => "ess_heading_typography",
+						"id" => "tp_heading_typography",
 						"std" => "Georgia",
 						"type" => "select",
-						"options" => $ess_heading_typography);	
+						"options" => $tp_heading_typography);	
 	
 		
 	return $options;

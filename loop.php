@@ -3,13 +3,13 @@
 if (!have_posts()) : ?>
 
     <div class="post">
-        <h1 class="post-title"><?php _e("Oh snap. Houston, looks like we've lost.", 'essential'); ?></h1>
+        <h1 class="post-title"><?php _e("Oh snap. Houston, looks like we've lost.", 'thoughtplifier'); ?></h1>
         <div class="the-content">
-            <h2><?php _e("The page you try to access is not exist. You can go back to <a href='" . get_bloginfo('url') . "'>the homepage</a> or search something else:", 'essential'); ?></h2>
+            <h2><?php _e("The page you try to access is not exist. You can go back to <a href='" . get_bloginfo('url') . "'>the homepage</a> or search something else:", 'thoughtplifier'); ?></h2>
             <p>
                 <form method="get" id="searchform" action="<?php echo get_option('home'); ?>">
-                    <input type="text" value="<?php _e("Type keywords and hit enter", "essential"); ?>" name="s" id="s-404" onfocus="if (this.value == '<?php _e("Type keywords and hit enter", "essential"); ?>') {this.value = '';}" onblur="if (this.value == '') {this.value = '<?php _e("Type keywords and hit enter", "essential"); ?>';}" />
-                    <input type="hidden" id="searchsubmit" value="<?php _e("Search", 'essential'); ?>" />
+                    <input type="text" value="<?php _e("Type keywords and hit enter", 'thoughtplifier'); ?>" name="s" id="s-404" onfocus="if (this.value == '<?php _e("Type keywords and hit enter", 'thoughtplifier'); ?>') {this.value = '';}" onblur="if (this.value == '') {this.value = '<?php _e("Type keywords and hit enter", 'thoughtplifier'); ?>';}" />
+                    <input type="hidden" id="searchsubmit" value="<?php _e("Search", 'thoughtplifier'); ?>" />
                 </form>
             </p>
         </div>
@@ -24,33 +24,33 @@ while ( have_posts() ) : the_post(); ?>
                 <?php the_title(); ?>
             </h1>
             <p class="author">
-                <?php _e('Written by ', 'essential'); the_author_link(); ?>
+                <?php _e('Written by ', 'thoughtplifier'); the_author_link(); ?>
             </p>
             <div class="content">
                 <?php the_content(); ?>
             </div><!-- .content -->
             
             <div id="author-box" class="clearfix">
-                <?php ess_author_box(); ?>
+                <?php tp_author_box(); ?>
             </div><!-- .author-box -->
             
             <div class="meta clearfix">
                 <div class="meta-item tags">
-                    <h4 class="section-title"><?php _e('Tags', 'essential'); ?></h4>
+                    <h4 class="section-title"><?php _e('Tags', 'thoughtplifier'); ?></h4>
                     <?php the_tags('<ul><li>', '</li><li>', '</li></ul>'); ?>
                 </div>
                 <div class="meta-item categories">
-                    <h4 class="section-title"><?php _e('Categories', 'essential'); ?></h4>
+                    <h4 class="section-title"><?php _e('Categories', 'thoughtplifier'); ?></h4>
                     <?php the_category(); ?>
                 </div>
                 <div class="meta-item info">
-                    <h4 class="section-title"><?php _e('Post Info', 'essential'); ?></h4>
-                    <?php ess_post_date(); ?>                    
+                    <h4 class="section-title"><?php _e('Post Info', 'thoughtplifier'); ?></h4>
+                    <?php tp_post_date(); ?>                    
                 </div>
             </div><!-- .meta -->
             
             <div id="related-posts" class="clearfix">
-                <?php ess_related_posts(5); ?>
+                <?php tp_related_posts(5); ?>
             </div><!-- #related-posts -->
             
             <div id="comment-wrap" class="clearfix">
@@ -65,7 +65,7 @@ while ( have_posts() ) : the_post(); ?>
                 <?php the_title(); ?>
             </h1>
             <p class="author">
-                <?php _e('Written by ', 'essential'); the_author_link(); ?>
+                <?php _e('Written by ', 'thoughtplifier'); the_author_link(); ?>
             </p>
             <div class="content">
                 <?php the_content(); ?>
@@ -82,7 +82,7 @@ while ( have_posts() ) : the_post(); ?>
                 <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </h2>
             <p class="author">
-                <?php _e('Written by ', 'essential'); the_author_link(); _e(' at ', 'essential'); ess_post_date(); ?>
+                <?php _e('Written by ', 'thoughtplifier'); the_author_link(); _e(' at ', 'thoughtplifier'); tp_post_date(); ?>
             </p>
             <?php
                 if ( has_post_thumbnail()) {
@@ -90,7 +90,7 @@ while ( have_posts() ) : the_post(); ?>
                 }
             ?>
             <div class="content">
-                <p><?php echo ess_excerpt(40); ?>. <a href="<?php the_permalink(); ?>" class="read-more"><?php _e('read more &rarr;', 'essential'); ?></a></p>
+                <p><?php echo tp_excerpt(40); ?>. <a href="<?php the_permalink(); ?>" class="read-more"><?php _e('read more &rarr;', 'thoughtplifier'); ?></a></p>
             </div><!-- .content -->
 
         </div><!-- #post -->

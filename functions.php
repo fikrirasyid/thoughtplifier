@@ -28,8 +28,8 @@ if ( !function_exists( 'optionsframework_init' ) ) {
  * Hook the stylesheets & scripts to wp_head
  * 
  */
-add_action('wp_head', 'ess_stylesheets_scripts', 5);
-function ess_stylesheets_scripts(){
+add_action('wp_head', 'tp_stylesheets_scripts', 5);
+function tp_stylesheets_scripts(){
     // Register scripts & stylesheets
     wp_register_style('ess-main', get_bloginfo('stylesheet_directory') . '/css/main.css', array(), false, 'screen');
     wp_enqueue_style('ess-main');
@@ -49,8 +49,8 @@ function ess_stylesheets_scripts(){
  * Hooking custom javascript
  *
  */
-add_action('wp_head', 'ess_javascripts', 10);
-function ess_javascripts(){
+add_action('wp_head', 'tp_javascripts', 10);
+function tp_javascripts(){
     ?>
     <script type="text/javascript">
 	//<![CDATA[
@@ -94,24 +94,24 @@ function ess_javascripts(){
  * Custom Color Scheme
  * 
  */
-add_action('wp_head', 'ess_color_scheme', 5);
-function ess_color_scheme(){
+add_action('wp_head', 'tp_color_scheme', 5);
+function tp_color_scheme(){
 ?>
 <style type="text/css">
 /* Main Backgrounds */
 #head,
-#nav .hover a:hover     {background:<?php echo of_get_option('ess_main_background', '#555'); ?>;}
+#nav .hover a:hover     {background:<?php echo of_get_option('tp_main_background', '#555'); ?>;}
 
 /* Links */
-a			{color:<?php echo of_get_option('ess_link_color', '#000000'); ?>; text-decoration:none;}
+a			{color:<?php echo of_get_option('tp_link_color', '#000000'); ?>; text-decoration:none;}
 
 /* Hovered State */
-a:hover                 {color:<?php echo of_get_option('ess_link_hover', '#960000'); ?>;}
+a:hover                 {color:<?php echo of_get_option('tp_link_hover', '#960000'); ?>;}
 
 /* Header */
 #head,
-#sitename a             {color:<?php echo of_get_option('ess_header_color', '#FFFFFF'); ?>;}
-#sitename a:hover       {color:<?php echo of_get_option('ess_header_hover', '#AFAFAF'); ?>;}
+#sitename a             {color:<?php echo of_get_option('tp_header_color', '#FFFFFF'); ?>;}
+#sitename a:hover       {color:<?php echo of_get_option('tp_header_hover', '#AFAFAF'); ?>;}
 </style>
 <?php
 }
@@ -125,12 +125,12 @@ a:hover                 {color:<?php echo of_get_option('ess_link_hover', '#9600
  * Custom Typography
  * 
  */
-add_action('wp_head', 'ess_typography', 5); 
-function ess_typography(){
-    if (of_get_option('ess_heading_typography', 'Georgia') != 'Georgia'){
-	$printed_typography = str_replace("+", " ", of_get_option('ess_heading_typography', 'Georgia'));
+add_action('wp_head', 'tp_typography', 5); 
+function tp_typography(){
+    if (of_get_option('tp_heading_typography', 'Georgia') != 'Georgia'){
+	$printed_typography = str_replace("+", " ", of_get_option('tp_heading_typography', 'Georgia'));
 	?>
-<link href='http://fonts.googleapis.com/css?family=<?php echo of_get_option('ess_heading_typography', 'Georgia')?>' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=<?php echo of_get_option('tp_heading_typography', 'Georgia')?>' rel='stylesheet' type='text/css'>
 <style type="text/css">
 body #sitename,
 body #sitename a,
@@ -164,7 +164,7 @@ body .widget-title {font-size:18px !important;}
  * Formatting site's heading for the sake of SEO - only one h1 per page
  * 
  */
-function ess_sitename(){
+function tp_sitename(){
     if (is_home()){
         echo '<h1 id="sitename">'. get_bloginfo("name") .'</h1>';
     } else {
@@ -214,9 +214,9 @@ if ( function_exists( 'register_nav_menus' ) ) {
  *
  */
 register_sidebar( array(
-    'name' => __( 'Navigation Bar', 'essential' ),
+    'name' => __( 'Navigation Bar', 'thoughtplifier' ),
     'id' => 'nav-bar-area',
-    'description' => __( 'The navigation bar widget area', 'essential' ),
+    'description' => __( 'The navigation bar widget area', 'thoughtplifier' ),
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget' => '</li>',
     'before_title' => '<h3 class="widget-title">',
@@ -224,9 +224,9 @@ register_sidebar( array(
 ) );
 
 register_sidebar( array(
-    'name' => __( 'Footer Bar', 'essential' ),
+    'name' => __( 'Footer Bar', 'thoughtplifier' ),
     'id' => 'footer-area',
-    'description' => __( 'The footer widget area', 'essential' ),
+    'description' => __( 'The footer widget area', 'thoughtplifier' ),
     'before_widget' => '<li id="%1$s" class="widget %2$s">',
     'after_widget' => '</li>',
     'before_title' => '<h3 class="widget-title">',
@@ -254,16 +254,16 @@ add_image_size( 'main-image', 480, 360, true);
  * Post Date & Meta
  *
  */
-function ess_post_date(){
+function tp_post_date(){
 	echo '<span class="post-date">';
 	the_time('F jS, Y');
 	echo '</span>';
 }
 
-function ess_post_meta(){
+function tp_post_meta(){
 	echo "<span>";
 	echo "By: " . get_the_author_link();
-	echo "</span><span>" . __('Posted in: ', 'essential');
+	echo "</span><span>" . __('Posted in: ', 'thoughtplifier');
 	the_category(', ');
 	echo "</span>";
 }
@@ -276,7 +276,7 @@ function ess_post_meta(){
  * Custom Controllable Excerpt
  *
  */
-function ess_excerpt($limit) {
+function tp_excerpt($limit) {
 	$excerpt = explode(' ', get_the_excerpt(), $limit);
 	if (count($excerpt)>=$limit) {
 		array_pop($excerpt);
@@ -298,7 +298,7 @@ function ess_excerpt($limit) {
  * Author Box
  *
  */
-function ess_author_box(){		
+function tp_author_box(){		
 	// Get the author email -> for Gravatar
 	$author_email = get_the_author_meta('user_email');
 		
@@ -306,7 +306,7 @@ function ess_author_box(){
 	$author_description = get_the_author_meta('description');
 		
 	echo '
-	    <h4 class="section-title">' . __('About The Author', 'essential') . '</h4>
+	    <h4 class="section-title">' . __('About The Author', 'thoughtplifier') . '</h4>
             ' . get_avatar($author_email, 50, '') . '
             <p>' . get_the_author_link() . ' - ' . $author_description . '</p>
 	';
@@ -321,7 +321,7 @@ function ess_author_box(){
  * Related Posts
  *
  */
-function ess_related_posts($showposts){
+function tp_related_posts($showposts){
     global $post;
     
     // Get current post category -> Make query based on it
@@ -341,7 +341,7 @@ function ess_related_posts($showposts){
     $my_query = new wp_query($args);
     if( $my_query->have_posts() ) {
         ?>
-        <h4 class="section-title"><?php _e('Related Posts', 'essential'); ?></h4>
+        <h4 class="section-title"><?php _e('Related Posts', 'thoughtplifier'); ?></h4>
         <ol>
             <?php        
                 while ($my_query->have_posts()) {
@@ -367,14 +367,14 @@ function ess_related_posts($showposts){
  * Comments & Ping Listings
  *
  */
-add_filter('get_comments_number', 'essential_comment_count', 0);
-function essential_comment_count( $count ) {
+add_filter('get_comments_number', 'tp_comment_count', 0);
+function tp_comment_count( $count ) {
 	global $id;
 	$comments_by_type = &separate_comments(get_comments('post_id=' . $id));
 	return count($comments_by_type['comment']);
 }
 
-function essential_list_pings($comment, $args, $depth) {
+function tp_list_pings($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment;
 	?>
 	<li id="comment-<?php comment_ID(); ?>">
@@ -383,7 +383,7 @@ function essential_list_pings($comment, $args, $depth) {
 	<?php
 }
 
-function essential_comment($comment, $args, $depth) {
+function tp_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; ?>
 	<li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">	
 		<div id="div-comment-<?php comment_ID() ?>" class="comment-wrap">
@@ -393,14 +393,14 @@ function essential_comment($comment, $args, $depth) {
 				</div>
 				<div class="comment-content">
 					<p class="comment-author"><strong><?php comment_author_link(); ?></strong></p>
-                                        <p class="comment-date"><?php printf( get_comment_time('d F Y')) ?><?php edit_comment_link(__('| Edit', 'essential'),'  ','') ?></p>
+                                        <p class="comment-date"><?php printf( get_comment_time('d F Y')) ?><?php edit_comment_link(__('| Edit', 'thoughtplifier'),'  ','') ?></p>
 					<?php if ($comment->comment_approved == '0') : ?>
-					<p><em><?php _e('Your comment will appear after being approved by admin.', 'essential') ?></em> </p>
+					<p><em><?php _e('Your comment will appear after being approved by admin.', 'thoughtplifier') ?></em> </p>
 					<?php endif; ?>
 					<div class="content">
                                             <?php comment_text() ?>
                                         </div>
-					<?php comment_reply_link(array_merge( $args, array('reply_text' => __('Reply', 'essential'), 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+					<?php comment_reply_link(array_merge( $args, array('reply_text' => __('Reply', 'thoughtplifier'), 'add_below' => 'div-comment', 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
 				</div>
 			</div>
 		</div><!-- .comment-wrap -->

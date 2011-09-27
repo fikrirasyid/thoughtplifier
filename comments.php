@@ -2,7 +2,7 @@
 	/* If the post is password protected */
 	if ( post_password_required() ) : ?>
 		<h4 class="comment-title">
-			<?php _e('This post is password protected. Please enter the password to view comments', 'essential'); ?>
+			<?php _e('This post is password protected. Please enter the password to view comments', 'thoughtplifier'); ?>
 		</h4>
 	<?php return; endif; ?>
 	
@@ -17,25 +17,25 @@
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<div class="comment-nav clearfix">
 				<div class="comment-prev">
-					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'essential' ) ); ?>
+					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'thoughtplifier' ) ); ?>
 				</div>
 				<div class="comment-next">
-					<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'essential' ) ); ?>
+					<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'thoughtplifier' ) ); ?>
 				</div>
 			</div><!-- .comment-nav -->
 		<?php endif; ?>
 		
 		<ol id="comment-list">
-			<?php wp_list_comments(array('callback' => 'essential_comment')); ?>
+			<?php wp_list_comments(array('callback' => 'tp_comment')); ?>
 		</ol>	
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
 			<div class="comment-nav clearfix bottom">
 				<div class="comment-prev">
-					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'essential' ) ); ?>
+					<?php previous_comments_link( __( '<span class="meta-nav">&larr;</span> Older Comments', 'thoughtplifier' ) ); ?>
 				</div>
 				<div class="comment-next">
-					<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'essential' ) ); ?>
+					<?php next_comments_link( __( 'Newer Comments <span class="meta-nav">&rarr;</span>', 'thoughtplifier' ) ); ?>
 				</div>
 			</div><!-- .comment-nav -->
 		<?php endif; ?>
@@ -44,7 +44,7 @@
 	/* If the comment section is closed, show this message instead */
 	elseif ( ! comments_open() && ! is_page() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
 		<h4 class="comment-title">
-			<?php _e('Comment is closed', 'essential'); ?>
+			<?php _e('Comment is closed', 'thoughtplifier'); ?>
 		</h4>
 	<?php endif; ?>
 	
