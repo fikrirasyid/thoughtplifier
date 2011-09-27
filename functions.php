@@ -36,7 +36,7 @@ function ess_stylesheets_scripts(){
 		
     // Adding scripts into wp_head()
     wp_deregister_script('jquery');
-    wp_register_script( 'jquery', get_bloginfo('template_directory') . '/js/jquery-1.6.4.min.js', array(), false, false);
+    wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js', array(), false, false);
     wp_enqueue_script('jquery');
 }
 
@@ -52,17 +52,18 @@ function ess_stylesheets_scripts(){
 add_action('wp_head', 'ess_javascripts', 10);
 function ess_javascripts(){
     ?>
-    <script type="text/javascript"> 
-        jQuery(document).ready(function( $ ){
-            jQuery("#nav li").hover(function(){jQuery(this).addClass("hover").children("ul").slideToggle();}, function(){jQuery(this).removeClass("hover").children("ul").slideToggle();});
-	    jQuery("#nav li li").has(".sub-menu").children("a").append(" &raquo;");
+    <script type="text/javascript">
+	//<![CDATA[
+        jQuery(document).ready(function($){
+            $("#nav li").hover(function(){$(this).addClass("hover").children("ul").slideToggle();}, function(){$(this).removeClass("hover").children("ul").slideToggle();});
             
-            jQuery('#more-content-nav a').click(function(){
-                jQuery('#more-content-nav a').toggle();
-                jQuery('#nav-bar').slideToggle();
+            $('#more-content-nav a').click(function(){
+                $('#more-content-nav a').toggle();
+                $('#nav-bar').slideToggle();
                 return false;
             });
             
+	    <?php if (is_single()) :?>
             /* Set similar height */
             function setEqualHeight(columns){
                 var tallestcolumn = 0;
@@ -75,9 +76,10 @@ function ess_javascripts(){
 		columns.height(tallestcolumn);
             }
             setEqualHeight($('.meta-item'));
-            
+            <?php endif; ?>
             
         });
+	//]]>
     </script>
     <?php
 
