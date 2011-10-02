@@ -167,6 +167,18 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 #author-box             {background:#dfdfdf; border:1px solid #afafaf; margin:0 0 20px 0; padding:10px; text-shadow:0 1px 0 #fff;}
 #author-box .avatar     {float:left; padding:4px; border:1px solid #afafaf; margin:0 10px 10px 0; background:#fff;}
 
+/* Subscribe Box */
+#subscribe-box          {border:1px solid #D1DB85; padding:10px; background:#EEF4BC; margin:0 0 20px;}
+#subscribe-box .description {text-align:center;}
+#subscription-channel li{float:left; padding:10px; opacity:0.5;}
+#subscription-channel #email-subs,
+#subscription-channel a {float:left; width:50px; height:50px; padding:0; border:none; text-indent:-99999em;}
+#twitter          {background:url(../images/twitter.png);}
+#facebook         {background:url(../images/facebook.png);}
+#rss              {background:url(../images/rss.png);}
+#email-subs       {background:url(../images/email.png);}#subscription-channel .description {float:left; width:160px; height:45px; padding:4px 5px 0; background:#D1DB85; margin:0 0 0 15px; font:11px Georgia; border:1px dotted #B9C16C;}
+#feedburner-email       {border:1px solid #B9C16C; width:148px; padding:3px 5px; margin-bottom:3px; font:italic 12px Georgia;}
+
 /* Related Posts */
 #related-posts          {margin:0 0 20px; text-shadow:0 1px 0 #fff;}
 #related-posts li       {text-align:center;}

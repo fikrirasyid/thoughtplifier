@@ -34,6 +34,8 @@ while ( have_posts() ) : the_post(); ?>
                 <?php tp_author_box(); ?>
             </div><!-- .author-box -->
             
+            <?php tp_subscribe_box(); ?>
+            
             <div class="meta clearfix">
                 <div class="meta-item tags">
                     <h4 class="section-title"><?php _e('Tags', 'thoughtplifier'); ?></h4>

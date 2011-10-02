@@ -114,7 +114,33 @@ function optionsframework_options() {
 						"std" => "Georgia",
 						"type" => "select",
 						"options" => $tp_heading_typography);	
+
+	$options[] = array( "name" => "Social Media",
+						"type" => "heading");
 	
+	$options[] = array( "name" => "Facebook Page URL",
+						"desc" => "Type Facebook URL here.",
+						"id" => "facebook_url",
+						"std" => "http://facebook.com/fikri.rasyid.book",
+						"type" => "text");
+
+	$options[] = array( "name" => "Twitter Username",
+						"desc" => "Type Twitter username here.",
+						"id" => "twitter_username",
+						"std" => "fikrirasyid",
+						"type" => "text");
+
+	$options[] = array( "name" => "RSS Feed URL",
+						"desc" => "Type the RSS Feed URL here.",
+						"id" => "rssfeed_url",
+						"std" => get_bloginfo('url') . "/?feed=rss",
+						"type" => "text");
+
+	$options[] = array( "name" => "Feedburner ID",
+						"desc" => "Type Google Feedburner ID here. It will be used for email subscription on content's subscription box.",
+						"id" => "feedburner_id",
+						"std" => "FikriRasyid",
+						"type" => "text");	
 		
 	return $options;
 }

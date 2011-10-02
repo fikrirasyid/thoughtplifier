@@ -64,6 +64,8 @@ function tp_javascripts(){
             });
             
 	    <?php if (is_single()) :?>
+	    $('#subscription-channel li').hover(function(){$(this).fadeTo('medium', 1);}, function(){$(this).fadeTo('slow', 0.5);});
+	    
             /* Set similar height */
             function setEqualHeight(columns){
                 var tallestcolumn = 0;
@@ -288,6 +290,40 @@ function tp_excerpt($limit) {
 	
 	$excerpt = preg_replace('`\[[^\]]*\]`','',$excerpt);
 	return $excerpt;
+}
+
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
+ * Subscribe & Connect Box
+ * 
+*/
+function tp_subscribe_box(){
+    ?>
+            <div id="subscribe-box" class="clearfix">
+                <h4 class="section-title">Connect &amp; Subscribe</h4>
+                <p class="description">Keep in touch and get my latest content trough:</p>
+                <ul id="subscription-channel">
+                    <li><a href="http://twitter.com/<?php echo of_get_option('twitter_username', 'fikrirasyid'); ?>" id="twitter" title="Follow @<?php echo of_get_option('twitter_username', 'fikrirasyid'); ?> on Twitter">Twitter</a></li>
+                    <li><a href="<?php echo of_get_option('facebook_url', 'http://facebook.com/fikri.rasyid.book'); ?>" id="facebook" title="Subscribe &amp; be friend on Facebook">Facebook</a></li>
+                    <li><a href="<?php echo of_get_option('rssfeed_url', get_bloginfo('url') . "/?feed=rss"); ?>" id="rss" title="Subscribe to our RSS Feed">RSS Feed</a></li>
+                    <li>
+                        <span id="email-subs">Email</span>
+                        <span class="description">
+                            <form id="feedburner-form" action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=<?php echo of_get_option('feedburner_id', 'FikriRasyid'); ?>', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">
+                                <input type="text" id="feedburner-email" name="email" value='Type your email &amp; hit enter' onfocus="if (this.value == 'Type your email &amp; hit enter') {this.value = '';}" onblur="if (this.value == '') {this.value = 'Type your email &amp; hit enter';}" />
+                                <input type="hidden" value="<?php echo of_get_option('feedburner_id', 'FikriRasyid'); ?>" name="uri"/>
+                                <input type="hidden" name="loc" value="en_US"/>
+                            </form>
+                            Get latest post on your inbox.
+                        </span>
+                    </li>
+                </ul>
+            </div><!-- #subscribe-box -->    
+    <?php
 }
 
 
