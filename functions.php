@@ -25,6 +25,46 @@ if ( !function_exists( 'optionsframework_init' ) ) {
 
 /*
  * ------------------------------------------------------------------------------------------------------------------------
+ * Quote section using post format
+ * 
+ */
+add_theme_support( 'post-formats', array( 'quote' ) );
+function tp_random_quote(){
+    global $post;
+    $args = array(
+		  'posts_per_page' => 1,
+		  'post_type' => 'post',
+		  'orderby' => 'rand',
+		  'tax_query' => array(
+		    array(
+			'taxonomy' => 'post_format',
+			'field' => 'slug',
+			'terms' => 'post-format-quote'
+		    )
+		  )
+		  );
+    $the_query = new WP_Query($args);
+    while ( $the_query->have_posts() ) : $the_query->the_post();
+    ?>
+
+    <div id="random-quote">
+	<div id="quote-wrap">
+	    <?php the_content(); ?>					
+	</div>
+    </div>
+
+
+    <?php
+    endwhile;
+    wp_reset_postdata();
+}
+
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
  * Hook the stylesheets & scripts to wp_head
  * 
  */

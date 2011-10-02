@@ -82,6 +82,8 @@
 				</div>
 			<?php endif; ?>
 			
+			<?php tp_random_quote(); ?>
+			
 		</div><!-- .wrap -->
 	</div><!-- #body -->
 	<div id="foot" class="clearfix2">
