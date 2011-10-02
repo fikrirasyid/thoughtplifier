@@ -146,6 +146,23 @@ function optionsframework_options() {
 						"id" => "feedburner_id",
 						"std" => "FikriRasyid",
 						"type" => "text");	
-		
+
+	$options[] = array( "name" => "Content",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Custom text before content",
+						"desc" => "Want to add some texts, images or even ads BEFORE every content on every post? Type it here.",
+						"id" => "tp_before_content",
+						"std" => "",
+						"type" => "textarea"); 
+
+
+	$options[] = array( "name" => "Custom text after content",
+						"desc" => "Want to add some texts, images or even ads AFTER every content on every post? Type it here.",
+						"id" => "tp_after_content",
+						"std" => "",
+						"type" => "textarea"); 
+
+	
 	return $options;
 }

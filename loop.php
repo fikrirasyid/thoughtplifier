@@ -27,7 +27,11 @@ while ( have_posts() ) : the_post(); ?>
                 <?php _e('Written by ', 'thoughtplifier'); the_author_link(); ?>
             </p>
             <div class="content">
-                <?php the_content(); ?>
+                <?php
+                    echo of_get_option('tp_before_content', '');
+                    the_content();
+                    echo of_get_option('tp_after_content', '');                    
+                ?>
             </div><!-- .content -->
             
             <div id="author-box" class="clearfix">
