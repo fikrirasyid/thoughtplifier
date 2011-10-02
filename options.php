@@ -65,6 +65,11 @@ function optionsframework_options() {
 	$options[] = array( "name" => "General",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Favicon",
+						"desc" => "Upload custom favicon here. Favicon is 16 x 16 pixels .ico formatted image used as site icon",
+						"id" => "tp_favicon",
+						"type" => "upload");	
+
 	$options[] = array( "name" => "Custom Javascript",
 						"desc" => "Paste custom javascript code such as Google Analytics here.",
 						"id" => "tp_custom_js",

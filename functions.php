@@ -94,6 +94,23 @@ function tp_javascripts(){
 
 /*
  * ------------------------------------------------------------------------------------------------------------------------
+ * Custom Favicon
+ * 
+ */
+add_action('wp_head', 'tp_favicon', 5);
+function tp_favicon(){
+    if (of_get_option('tp_favicon', '') != ''){
+	?>
+	<link rel="icon" href="<?php echo of_get_option('tp_favicon', ''); ?>" type="image/x-icon" />
+	<?php
+    }
+}
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
  * Custom Color Scheme
  * 
  */
