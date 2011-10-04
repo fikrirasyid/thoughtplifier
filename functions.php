@@ -47,11 +47,9 @@ function tp_random_quote(){
     while ( $the_query->have_posts() ) : $the_query->the_post();
     ?>
 
-    <div id="random-quote">
 	<div id="quote-wrap">
-	    <?php the_content(); ?>					
+	    <?php the_content(); ?>
 	</div>
-    </div>
 
 
     <?php
@@ -102,7 +100,24 @@ function tp_javascripts(){
                 $('#nav-bar').slideToggle();
                 return false;
             });
-            
+	    
+	    /* Move Sidebar Area if the window is scrolled */
+	    var sidebar_position = $('#fixed-sidebar').offset();
+	    var sidebar_top_padding = 200;
+	    var sidebar_scroll_bottom_limit = $('#foot').offset();
+	    	    
+            $(window).scroll(function(){
+		if ( $(window).scrollTop() > sidebar_position.top && $(window).scrollTop() < sidebar_scroll_bottom_limit.top - $(window).height()){
+		    $('#fixed-sidebar').stop().animate({top: $(window).scrollTop() - sidebar_top_padding}, 400);
+		} else if ($(window).scrollTop() > sidebar_scroll_bottom_limit.top - $(window).height())  {
+		    $('#fixed-sidebar').stop().animate({top: sidebar_scroll_bottom_limit.top - $(window).height()}, 400);
+		} else {
+		    $('#fixed-sidebar').stop().animate({top: '23' }, 400);		    
+		}
+	    });
+	    
+	    
+	    
 	    <?php if (is_single()) :?>
 	    $('#subscription-channel li').hover(function(){$(this).fadeTo('medium', 1);}, function(){$(this).fadeTo('slow', 0.5);});
 	    

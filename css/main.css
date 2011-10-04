@@ -242,14 +242,16 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 #pagenavi .pages        {margin-left:0;}
 #pagenavi span.current     {font-style:italic; background:none; border:1px solid #efefef;}
 
-/* Random Quote */
-#random-quote           {display:block; width:200px; position:absolute; top:23px; right:-200px;
+/* Fixed Sidebar */
+#fixed-sidebar           {display:block; width:200px; position:absolute; top:23px; right:-200px;
                         line-height:1.6; text-shadow:0 1px 0 #fff; color:#666; font-size:11px;
                         border-top:2px solid #666;}
-#quote-wrap             {border-top:1px solid #fff; padding:10px 0 0 20px;}
-#random-quote p,
-#random-quote blockquote{margin:0 0 10px;}
 
+/* Quote */
+#quote-wrap             {border-top:1px solid #fff; padding:10px 0 0 20px;}
+#quote-wrap p,
+#quote-wrap blockquote{margin:0 0 10px;}
+#quote-wrap img         {display:none;}
 
 
 

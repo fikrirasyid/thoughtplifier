@@ -82,7 +82,9 @@
 				</div>
 			<?php endif; ?>
 			
-			<?php tp_random_quote(); ?>
+			<div id="fixed-sidebar">
+				<?php tp_random_quote(); ?>
+			</div><!-- #fixed-sidebar -->
 			
 		</div><!-- .wrap -->
 	</div><!-- #body -->
