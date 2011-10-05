@@ -70,7 +70,7 @@ function tp_random_quote(){
 add_action('wp_head', 'tp_stylesheets_scripts', 5);
 function tp_stylesheets_scripts(){
     // Register scripts & stylesheets
-    wp_register_style('ess-main', get_bloginfo('stylesheet_directory') . '/css/main.css', array(), false, 'screen');
+    wp_register_style('ess-main', get_bloginfo('template_directory') . '/css/main.css', array(), false, 'screen');
     wp_enqueue_style('ess-main');
 		
     // Adding scripts into wp_head()
