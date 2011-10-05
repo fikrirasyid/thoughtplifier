@@ -48,6 +48,7 @@ function tp_random_quote(){
     ?>
 
 	<div id="quote-wrap">
+	    <h4 class="section-title">Quotes</h4>
 	    <?php the_content(); ?>
 	</div>
 
@@ -678,6 +679,35 @@ function pagenavi($before = '', $after = '') {
     }
 }
 
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
+ * Fixed Sidebar Ads
+ * 
+ */
+function tp_sidebar_ads(){
+    if (of_get_option('tp_fixed_sidebar_ad_status', '1') == '1') :
+    
+    if (of_get_option('tp_fixed_sidebar_ad_image', get_bloginfo('template_directory') . '/images/thoughtplifier-theme.png') == ''){
+	$banner_image =  get_bloginfo('template_directory') . '/images/thoughtplifier-theme.png';
+    } else {
+	$banner_image = of_get_option('tp_fixed_sidebar_ad_image', get_bloginfo('template_directory') . '/images/thoughtplifier-theme.png');
+    }
+    
+    ?>
+    <div id="sidebar-ad">
+    	<h4 class="section-title">Recommended</h4>
+	<a href="<?php echo of_get_option('tp_fixed_sidebar_ad_link', 'http://outstando.com/thoughtplifier/'); ?>" title="<?php echo of_get_option('tp_fixed_sidebar_ad_text', 'Thoughtplifier: a single-column WordPress Themes by Outstando'); ?>" target="_blank">
+	    <img src="<?php echo $banner_image ; ?>" alt="<?php echo of_get_option('tp_fixed_sidebar_ad_text', 'Thoughtplifier: a single-column WordPress Themes by Outstando'); ?>" />
+	</a>
+	<p class="ad description"><a href="<?php echo of_get_option('tp_fixed_sidebar_ad_link', 'http://outstando.com/thoughtplifier/'); ?>" target="_blank"><?php echo of_get_option('tp_fixed_sidebar_ad_text', 'Thoughtplifier: a single-column WordPress Themes by Outstando'); ?></a></p>
+    </div>
+    <?php
+    endif;
+}
 
 
 

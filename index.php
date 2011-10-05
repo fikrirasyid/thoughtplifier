@@ -83,7 +83,10 @@
 			<?php endif; ?>
 			
 			<div id="fixed-sidebar">
-				<?php tp_random_quote(); ?>
+				<?php
+					tp_random_quote();
+					tp_sidebar_ads();
+				?>
 			</div><!-- #fixed-sidebar -->
 			
 		</div><!-- .wrap -->

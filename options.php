@@ -163,6 +163,34 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "textarea"); 
 
+	$options[] = array( "name" => "Ads",
+						"type" => "heading");
+
+	$options[] = array( "name" => "Fixed Sidebar Banner",
+						"desc" => "Set the ad you want to show on fixed sidebar here.",
+						"type" => "info");
+	$options[] = array( "name" => "Show Fixed Sidebar ad?",
+						"desc" => "Check if you want to show fixed sidebar ad",
+						"id" => "tp_fixed_sidebar_ad_status",
+						"std" => "1",
+						"type" => "checkbox");
+
+	$options[] = array( "name" => "Fixed Sidebar Banner Link",
+						"desc" => "Type URL you want to use as link in fixed sidebar banner here",
+						"id" => "tp_fixed_sidebar_ad_link",
+						"std" => "http://outstando.com/thoughtplifier/",
+						"type" => "text");	
+
+	$options[] = array( "name" => "Fixed Sidebar Banner Image",
+						"desc" => "Upload image you want to use as banner here. Maximum width of the image should be 170 pixels.",
+						"id" => "tp_fixed_sidebar_ad_image",
+						"type" => "upload");
+
+	$options[] = array( "name" => "Fixed Sidebar Banner Text",
+						"desc" => "Type text you want to use as description of fixed sidebar banner here",
+						"id" => "tp_fixed_sidebar_ad_text",
+						"std" => "Thoughtplifier: a single-column WordPress Themes by Outstando",
+						"type" => "text");	
 	
 	return $options;
 }
