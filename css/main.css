@@ -244,11 +244,11 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 
 /* Fixed Sidebar */
 #fixed-sidebar           {display:block; width:200px; position:absolute; top:23px; right:-200px;
-                        line-height:1.6; text-shadow:0 1px 0 #fff; color:#666; font-size:11px;
-                        border-top:2px solid #666;}
+                        line-height:1.6; text-shadow:0 1px 0 #fff; color:#666; font-size:11px;}
 
 /* Quote */
-#quote-wrap             {border-top:1px solid #fff; padding:10px 0 0 20px;}
+#quote-wrap             {border-top:2px solid #666; margin:10px 0 0; padding-left:20px;}
+#quote-wrap h4          {border-top:1px solid #fff; padding-top:5px;}
 #quote-wrap p,
 #quote-wrap blockquote{margin:0 0 10px;}
 #quote-wrap img         {display:none;}

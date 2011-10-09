@@ -25,6 +25,7 @@ if ( !function_exists( 'optionsframework_init' ) ) {
  */
 add_theme_support( 'post-formats', array( 'quote' ) );
 function tp_random_quote(){
+    if (of_get_option('tp_fixed_sidebar_quote_status', '1') == '1') :
     global $post;
     $args = array(
 		  'posts_per_page' => 1,
@@ -51,6 +52,7 @@ function tp_random_quote(){
     <?php
     endwhile;
     wp_reset_postdata();
+    endif; 
 }
 
 

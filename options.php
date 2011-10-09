@@ -150,6 +150,12 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Content",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Show Random Quote on Fixed Sidebar?",
+						"desc" => "Tick this option if you want to show random quote (based on post format - quote) on fixed sidebar",
+						"id" => "tp_fixed_sidebar_quote_status",
+						"std" => "1",
+						"type" => "checkbox");
+
 	$options[] = array( "name" => "Custom text before content",
 						"desc" => "Want to add some texts, images or even ads BEFORE every content on every post? Type it here.",
 						"id" => "tp_before_content",
@@ -169,8 +175,9 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Fixed Sidebar Banner",
 						"desc" => "Set the ad you want to show on fixed sidebar here.",
 						"type" => "info");
+
 	$options[] = array( "name" => "Show Fixed Sidebar ad?",
-						"desc" => "Check if you want to show fixed sidebar ad",
+						"desc" => "Tick this option if you want to show fixed sidebar ad",
 						"id" => "tp_fixed_sidebar_ad_status",
 						"std" => "1",
 						"type" => "checkbox");
