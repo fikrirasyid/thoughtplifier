@@ -73,15 +73,23 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 #nav                    {background:#222222; height:32px; color:#fff; text-transform:uppercase; border-bottom:2px solid #111;}
 #nav ul li              {position:relative; float:left; z-index:100;}
 #nav ul li a            {float:left; color:#fff; padding:10px; font-size:12px;}
+#nav .has-sub-menu a    {padding-right:22px;}
 #nav ul li ul           {position:absolute; top:32px; left:0; display:none;}
 #nav ul li ul li        {position:relative;}
-#nav ul li ul li a      {width:120px; background:#222;}
-#nav ul li ul li ul     {position:absolute; top:0; left:140px;}
+#nav ul li ul li a      {width:120px; background:#222; padding-right:30px;}
+#nav ul li ul li ul     {position:absolute; top:0; left:150px;}
 
 #nav .current_page_item a,
-#nav .hover a           {background:#111;}
+#nav .active a           {background:#111;}
+#nav .active ul ul a    {background:#222;}
 
+#nav .dropdown-button   {float:left; width:20px; height:32px; position:absolute; top:0; right:0; cursor:pointer; background:url(../images/dropdown-button.png) no-repeat center center;}
+#nav .dropdown-button.active,
+#nav .dropdown-button:hover {background:url(../images/dropdown-button.png) no-repeat center center #111;}
 
+#nav ul ul .dropdown-button   {background:url(../images/dropdown-button-sub.png) no-repeat center center;}
+#nav ul ul .dropdown-button.active,
+#nav ul ul .dropdown-button:hover {background:url(../images/dropdown-button-sub.png) no-repeat center center #222;}
 
 
 

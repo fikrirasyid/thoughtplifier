@@ -91,7 +91,8 @@ function tp_javascripts(){
     <script type="text/javascript">
 	//<![CDATA[
         jQuery(document).ready(function($){
-            $("#nav li").hover(function(){$(this).addClass("hover").children("ul").slideToggle();}, function(){$(this).removeClass("hover").children("ul").slideToggle();});
+	    $('#nav .dropdown-button').live('click', function(){$(this).toggleClass('active').parent().toggleClass('active').children('ul').toggleClass('active').fadeToggle();});
+	    $('#nav .wrap ul li').has('.sub-menu').addClass('has-sub-menu').append('<span class="dropdown-button"></span>');
             
             $('#more-content-nav a').click(function(){
                 $('#more-content-nav a').toggle();
