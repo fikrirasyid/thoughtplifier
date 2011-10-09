@@ -256,7 +256,7 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 /* Ad */
 #sidebar-ad             {margin:40px 0 0 20px; padding:0 0 10px 0; text-align:center; border-top:1px solid #666;}
 #sidebar-ad h4          {border-top:1px solid #fff; padding-top:5px;}
-#sidebar-ad img         {padding:4px; border:1px solid #bfbfbf; background:#fff;}
+#sidebar-ad img         {padding:4px; border:1px solid #bfbfbf; background:#fff; margin:0 0 5px;}
 #sidebar-ad a           {color:#666;}
 .ad.description         {padding:0 5px;}
 
