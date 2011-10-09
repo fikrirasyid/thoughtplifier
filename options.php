@@ -169,6 +169,13 @@ function optionsframework_options() {
 						"std" => "",
 						"type" => "textarea"); 
 
+	$options[] = array( "name" => "Custom message for closed comment form",
+						"desc" => "Type custom message for closed comment form here.",
+						"id" => "tp_closed_comment_message",
+						"std" => "Sorry but we have decided to close the comment section for this post.",
+						"type" => "textarea"); 
+
+
 	$options[] = array( "name" => "Ads",
 						"type" => "heading");
 

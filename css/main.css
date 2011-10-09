@@ -189,7 +189,6 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 .comment-nav.bottom     {margin:50px 0 0;}
 .comment-nav a          {float:left; padding:5px 10px; border-bottom:1px dotted #afafaf; font-weight:bold; font-style:italic;}
 .comment-next a         {float:right;}
-#comment-list           {background:#999;}
 #comment-list li        {margin:0 0 10px; float:left; width:480px;}
 #comment-list li:after  {content:".";display:block; height:0; clear:both; visibility:hidden;}
 .comment-avatar         {float:left; padding:4px; border:1px solid #cfcfcf; background:#fff; margin:0 20px 20px 0;}
@@ -219,6 +218,7 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 .comment-title,
 #reply-title            {font-size:25px; text-align:center; margin:30px 0 50px 0; line-height:1.5; text-transform:uppercase; letter-spacing:1px; color:#000; text-shadow:0 -1px 0 #fff;
                         letter-spacing:-0.5px;}
+#comment-wrap .section-title {margin-top:20px;}                        
 #cancel-comment-reply-link {display:block; font-size:12px; letter-spacing:0;}
 
 .form-allowed-tags,
@@ -233,6 +233,11 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 #url                    {border:1px solid #afafaf; padding:8px 10px; font:italic 12px Georgia, Serif; height:16px; width:458px; color:#555;}
 #comment                {border:1px solid #afafaf; padding:8px 10px; font:italic 12px Georgia, Serif; height:150px; width:458px; color:#555;}
 .form-allowed-tags      {display:block; margin:20px 0;}
+#noresponse-message     {text-align:center; font:16px Georgia;}
+
+#comment-closed-message {border:1px solid #B52F40; background:#FCBAC3; margin:25px 0 0 0; padding:0 20px 10px; text-align:center; color:#333; text-shadow:0 1px 0 #efefef;}
+#comment-closed-message a {border-bottom:1px solid #B52F40; font: bold 14px Georgia; padding:0 3px;}
+#comment-closed-message a:hover {background:#FCD6DB;}
 
 /* Pagenavi */
 #pagenavi               {float:left; width:500px; margin:0 10px 30px 10px;}
