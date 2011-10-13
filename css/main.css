@@ -147,7 +147,10 @@ body 			{line-height: 1; font-family: Georgia, Helvetica, Arial; font-size:14px;
 .content ul li	        {margin:0 0 0 20px; list-style:square;}
 .content ol li	        {margin:0 0 0 20px; list-style:decimal;}
 .content blockquote	{margin:0 0 10px 0; padding:15px 30px 10px 40px; font:italic 16px Georgia; line-height:1.8; background:#cfcfcf; border-left:5px solid #afafaf;}
-.content .read-more     {font-weight:bold; font-style:italic;}
+.content .more-link     {float:right; padding:7px 10px 5px 10px; background:#777; color:#e2e2e2; text-shadow:0 -1px 0 #000; border-right:1px solid #000; border-bottom:1px solid #000;
+                        font-weight:bold; font-size:11px; text-transform:uppercase; letter-spacing:1.5px;}
+.content .more-link:hover{background:#555;}
+.content .more-link:focus{background:#888;}
 
 .attachment-main-image,
 .content img            {padding:4px; border:1px solid #cfcfcf; margin:0 0 10px; background:#fff;}

@@ -150,6 +150,18 @@ function optionsframework_options() {
 	$options[] = array( "name" => "Content",
 						"type" => "heading");
 
+	$options[] = array( "name" => "Homepage / Archive Content Setting",
+						"desc" => "Select 'Full Content' to show the complete content (you may divide it using WordPress' more tag, though) on homepage and archive page or 'Excerpt' to show an excerpt containts 40 first words of the content.",
+						"id" => "tp_index_content",
+						"std" => "excerpt",
+						"type" => "select",
+						"options" => array(
+								   "full" => "Full Content",
+								   "excerpt" => "Excerpt"
+								   )
+						);
+
+
 	$options[] = array( "name" => "Show Random Quote on Fixed Sidebar?",
 						"desc" => "Tick this option if you want to show random quote (based on post format - quote) on fixed sidebar",
 						"id" => "tp_fixed_sidebar_quote_status",

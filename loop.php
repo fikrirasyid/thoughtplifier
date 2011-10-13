@@ -90,13 +90,21 @@ while ( have_posts() ) : the_post(); ?>
             <p class="author">
                 <?php _e('Written by ', 'thoughtplifier'); the_author_link(); _e(' at ', 'thoughtplifier'); tp_post_date(); ?>
             </p>
-            <?php
-                if ( has_post_thumbnail()) {
+
+            <div class="content clearfix">
+                <?php if (of_get_option('tp_index_content', 'excerpt') == 'excerpt'): ?>
+                    <?php
+                        if ( has_post_thumbnail()) {
                             the_post_thumbnail("main-image");
-                }
-            ?>
-            <div class="content">
-                <p><?php echo tp_excerpt(40); ?>. <a href="<?php the_permalink(); ?>" class="read-more"><?php _e('read more &rarr;', 'thoughtplifier'); ?></a></p>
+                        }
+                    ?>
+                    <p><?php echo tp_excerpt(40); ?>...</p>
+                    <p><a href="<?php the_permalink(); ?>" class="more-link"><?php _e('read more &rarr;', 'thoughtplifier'); ?></a></p>
+                <?php
+                    else :
+                        the_content(__('read more', 'thoughtplifier'));
+                    endif;
+                ?>                
             </div><!-- .content -->
 
         </div><!-- #post -->
