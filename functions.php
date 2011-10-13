@@ -92,6 +92,17 @@ function tp_javascripts(){
 	//<![CDATA[
         jQuery(document).ready(function($){
 	    $('#nav .dropdown-button').live('click', function(){$(this).toggleClass('active').parent().toggleClass('active').children('ul').toggleClass('active').fadeToggle();});
+	    $('#nav .dropdown-button').live({
+		click: function(){
+		  $(this).parent('li').children('a').toggleClass('expand');  
+		},
+		mouseover: function(){
+		    $(this).parent('li').children('a').addClass('hover');
+		},
+		mouseout: function(){
+		    $(this).parent('li').children('a').removeClass('hover');
+		}
+	    });
 	    $('#nav .wrap ul li').has('.sub-menu').addClass('has-sub-menu').append('<span class="dropdown-button"></span>');
             
             $('#more-content-nav a').click(function(){
