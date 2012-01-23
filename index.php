@@ -93,7 +93,7 @@
 	</div><!-- #body -->
 	<div id="foot" class="clearfix2">
 		<div class="wrap">
-			<p id="credit"><a href="http://outstando.com/thoughtplifier">Thoughtplifier Theme</a><br /> Designed &amp; developed by <br /> <a href="http://outstando.com">Fikri Rasyid</a></p>
+			<p id="credit"><a href="http://outstando.com/thoughtplifier">Thoughtplifier Theme</a><br /> Designed &amp; developed by <br /> <a href="http://outstando.com">Fikri Rasyid</a> <?php echo get_num_queries(); ?> queries in <?php timer_stop(1,3); ?> seconds</p>
 			<ul id="bar-root"><?php dynamic_sidebar('Footer Bar'); ?></ul>
 		</div><!-- .wrap -->
 	</div><!-- #foot -->

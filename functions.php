@@ -741,3 +741,44 @@ function tp_sanitize_textarea($input) {
       $output = wp_kses( $input, $custom_allowedtags);
     return $output;
 }
+
+
+
+
+
+/*
+ * ------------------------------------------------------------------------------------------------------------------------
+ * Adding PressTrends to see how people interact with Thoughtplifier
+ * 
+*/
+// Presstrends
+function presstrends() {
+    // Add your PressTrends and Theme API Keys
+    $api_key = '7tkq2k7yo9yhdj3f2d3r3fnmadtpvgp7yf1j';
+    $auth = 'vd1jz0h1kpy2geh0lvw5ohj2bzfmzf00n';
+    
+    // NO NEED TO EDIT BELOW
+    $data = get_transient( 'presstrends_data' );
+    if (!$data || $data == ''){
+    $api_base = 'http://api.presstrends.io/index.php/api/sites/add/auth/';
+    $url = $api_base . $auth . '/api/' . $api_key . '/';
+    $data = array();
+    $count_posts = wp_count_posts();
+    $comments_count = wp_count_comments();
+    $theme_data = get_theme_data(get_stylesheet_directory() . '/style.css');
+    $plugin_count = count(get_option('active_plugins'));
+    $data['url'] = stripslashes(str_replace(array('http://', '/', ':' ), '', site_url()));
+    $data['posts'] = $count_posts->publish;
+    $data['comments'] = $comments_count->total_comments;
+    $data['theme_version'] = $theme_data['Version'];
+    $data['theme_name'] = str_replace( ' ', '', get_bloginfo( 'name' ));
+    $data['plugins'] = $plugin_count;
+    $data['wpversion'] = get_bloginfo('version');
+    foreach ( $data as $k => $v ) {
+    $url .= $k . '/' . $v . '/';
+    }
+    $response = wp_remote_get( $url );
+    set_transient('presstrends_data', $data, 60*60*24);
+}}
+
+add_action('wp_head', 'presstrends');
